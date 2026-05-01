@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${outfitFont.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className=" flex flex-col">
         <Navbar></Navbar>
-        <main className="max-w-7xl mx-auto">
+        <main className=" w-6xl mx-auto">
           {children}
         </main>
         <Footer></Footer>

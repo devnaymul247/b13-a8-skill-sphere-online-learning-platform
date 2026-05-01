@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
 
       {/* Background Layer */}
-      <div className="absolute inset-0 -z-10 bg-white dark:bg-[#0a0a0b]" />
+      <div className="absolute inset-0 -z-10 dark:bg-[#0a0a0b]" />
 
       {/* Subtle Gradient Glow */}
       <div
@@ -30,7 +30,7 @@ const Footer = () => {
                 height={32}
                 className="dark:brightness-200"
               />
-              <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
+              <h2 className="text-xl font-semibold tracking-tight dark:text-white">
                 SkillSphere
               </h2>
             </div>
@@ -42,14 +42,14 @@ const Footer = () => {
 
           {/* Product */}
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
+            <h3 className="text-sm font-semibold dark:text-white mb-4">
               Courses
             </h3>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <Link
                   href="/generate"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-white dark:hover:text-white transition"
                 >
                   Generate
                 </Link>
@@ -57,7 +57,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/all-photos"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-white dark:hover:text-white transition"
                 >
                   Gallery
                 </Link>
@@ -65,7 +65,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/pricing"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-white dark:hover:text-white transition"
                 >
                   Pricing
                 </Link>
@@ -75,14 +75,14 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
+            <h3 className="text-sm font-semibold dark:text-white mb-4">
               Company
             </h3>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-white dark:hover:text-white transition"
                 >
                   About
                 </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-white dark:hover:text-white transition"
                 >
                   Contact
                 </Link>
@@ -98,7 +98,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/terms"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-white dark:hover:text-white transition"
                 >
                   Terms
                 </Link>
@@ -108,7 +108,7 @@ const Footer = () => {
 
           {/* CTA Block */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-black dark:text-white">
+            <h3 className="text-sm font-semibold text-white dark:text-white">
               Start Rolling
             </h3>
 
@@ -119,7 +119,7 @@ const Footer = () => {
             <Link
               href="/signup"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full 
-              bg-black text-white dark:bg-white dark:text-black 
+              bg-white text-black dark:bg-white dark:text-black 
               text-sm font-medium transition-all duration-200 
               hover:scale-[1.02] hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10"
             >

@@ -17,7 +17,7 @@ const CourseCard = ({ course }) => {
                 <p className='text-gray-600'>{course.prompt}</p>
             </div>
             <Link href={`/all-courses/${course.id}`}>
-                <Button className='w-full mt-4'>View Details</Button>
+                <Button variant='tertiary' className='w-full mt-4'>View Details</Button>
             </Link>
         </Card>
     );

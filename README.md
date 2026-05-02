@@ -13,3 +13,4 @@ https://b13-a8-skill-sphere-online-learning.vercel.app/
 1. Hero UI
 2. gravity-ui icons
 3. react-toastify
+4. react-icons

@@ -1,6 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Check } from "@gravity-ui/icons";
+import { Check, GeoPolygons } from "@gravity-ui/icons";
 import {
   Button,
   Card,
@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
 import { toast } from "react-toastify";
 
 export default function SignUpPage() {
@@ -40,6 +41,10 @@ export default function SignUpPage() {
             router.push("/signin");
         }
   };
+
+    // const handleSocialSignUp = async () => {
+    //     await authClient.signUp.social({ provider: "google" });
+    // };
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5 bg-zinc-800">
@@ -112,6 +117,11 @@ export default function SignUpPage() {
           </Button>
         </div>
       </Form>
+      <p className="text-center text-2xl">Or</p>
+      <Button variant="outline" className="w-full" onClick={() => authClient.signIn.social({ provider: "google"})}>
+         <GrGoogle />
+        Sign up with Google
+      </Button>
     </Card>
   );
 }

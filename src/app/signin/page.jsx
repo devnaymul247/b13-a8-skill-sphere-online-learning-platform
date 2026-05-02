@@ -1,6 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Check } from "@gravity-ui/icons";
+import { Check, GeoPolygons } from "@gravity-ui/icons";
 import {
   Button,
   Card,
@@ -11,6 +11,8 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { useState } from "react";
+import { GrGoogle } from "react-icons/gr";
 import { toast } from "react-toastify";
 
 export default function SignInPage() {
@@ -35,6 +37,24 @@ export default function SignInPage() {
         else {
             toast.success("User signed in successfully!");
         }
+  };
+ const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+      const handleGoogleSignIn = async () => {
+    if (isGoogleLoading) return; 
+    
+    try {
+      setIsGoogleLoading(true);
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/",
+         errorCallbackURL: "/sign-in"
+      });
+    } catch (err) {
+      console.error("Google sign-in error:", err);
+      toast.error("Google sign-in failed!");
+    } finally {
+      setIsGoogleLoading(false); 
+    }
   };
 
   return (
@@ -97,6 +117,12 @@ export default function SignInPage() {
           </Button>
         </div>
       </Form>
+
+      <p className="text-center text-2xl">Or</p>
+      <Button variant="outline" className="w-full" onClick={handleGoogleSignIn}>
+        <GrGoogle />
+        Sign in with Google
+      </Button>
     </Card>
   );
 }

@@ -11,7 +11,6 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { useState } from "react";
 import { GrGoogle } from "react-icons/gr";
 import { toast } from "react-toastify";
 
@@ -38,24 +37,11 @@ export default function SignInPage() {
             toast.success("User signed in successfully!");
         }
   };
- const [isGoogleLoading, setIsGoogleLoading] = useState(false);
-      const handleGoogleSignIn = async () => {
-    if (isGoogleLoading) return; 
-    
-    try {
-      setIsGoogleLoading(true);
-      await authClient.signIn.social({
-        provider: "google",
-        callbackURL: "/",
-         errorCallbackURL: "/sign-in"
-      });
-    } catch (err) {
-      console.error("Google sign-in error:", err);
-      toast.error("Google sign-in failed!");
-    } finally {
-      setIsGoogleLoading(false); 
+
+    const handleGoogleSignIn = async () => {
+
+        await authClient.signIn.social({ provider: "google" });
     }
-  };
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5 bg-zinc-800">

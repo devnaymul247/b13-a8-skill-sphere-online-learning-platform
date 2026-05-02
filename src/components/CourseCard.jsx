@@ -1,5 +1,6 @@
 import { Button, Card, Chip } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CourseCard = ({ course }) => {
     return (
@@ -15,7 +16,9 @@ const CourseCard = ({ course }) => {
                 <p className='text-lg font-semibold'>Like: {course.likes}</p>
                 <p className='text-gray-600'>{course.prompt}</p>
             </div>
-            <Button variant='tertiary'>View Details</Button>
+            <Link href={`/all-courses/${course.id}`}>
+                <Button className='w-full mt-4'>View Details</Button>
+            </Link>
         </Card>
     );
 };

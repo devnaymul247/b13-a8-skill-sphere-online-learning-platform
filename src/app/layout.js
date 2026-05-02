@@ -20,12 +20,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="en" class="dark" data-theme="dark"
       className={`${outfitFont.className} h-full antialiased`}
     >
       <body className=" flex flex-col">
         <Navbar></Navbar>
-        <main className=" w-6xl mx-auto">
+        <main className=" max-w-7xl mx-auto">
           {children}
         </main>
         <Footer></Footer>

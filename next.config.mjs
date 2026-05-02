@@ -2,6 +2,9 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+  images: {
+    domains: ["i.pinimg.com"],
+  },
 };
 
 export default nextConfig;

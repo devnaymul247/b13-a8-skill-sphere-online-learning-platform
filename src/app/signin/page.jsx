@@ -11,11 +11,9 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-export default function SignUpPage() {
-    const router = useRouter();
+export default function SignInPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,40 +21,27 @@ export default function SignUpPage() {
         const userData = Object.fromEntries(formData.entries());
         console.log(userData);
 
-        const {data, error} = await authClient.signUp.email({
-            name: userData.name,
+        const {data, error} = await authClient.signIn.email({
             email: userData.email,
             password: userData.password,
-            image: userData.image
+            callbackURL: "/"
         });
 
         if (error) {
-            console.error("Error signing up:", error);
-            toast.error("Error signing up!");
+            console.error("Error signing in:", error);
+            toast.error("Error signing in!");
 
         } 
         else {
-            toast.success("User signed up successfully!");
-            router.push("/signin");
+            toast.success("User signed in successfully!");
         }
   };
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5 bg-zinc-800">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+      <h1 className="text-center text-2xl font-bold">Sign In</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField>
-
-        <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
-          <FieldError />
-        </TextField>
 
         <TextField
           isRequired
@@ -97,7 +82,7 @@ export default function SignUpPage() {
           <Label>Password</Label>
           <Input placeholder="Enter your password" />
           <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
+            Password should contains at least 8 characters with 1 uppercase and 1 number
           </Description>
           <FieldError />
         </TextField>

@@ -13,8 +13,8 @@ const CourseCard = ({ course }) => {
             </div> 
             <div>
                 <h2 className='text-xl font-bold'>{course.title}</h2>
-                <p className='text-lg font-semibold'>Like: {course.likes}</p>
-                <p className='text-gray-600'>{course.prompt}</p>
+                <p className='text-lg font-semibold'>Ratings: {course.rating}</p>
+                <p className='text-gray-600'>Instructor:{course.instructor}</p>
             </div>
             <Link href={`/all-courses/${course.id}`}>
                 <Button variant='tertiary' className='w-full mt-4'>View Details</Button>

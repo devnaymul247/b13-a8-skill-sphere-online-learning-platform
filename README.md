@@ -14,3 +14,6 @@ https://b13-a8-skill-sphere-online-learning.vercel.app/
 2. gravity-ui icons
 3. react-toastify
 4. react-icons
+5. mongodb
+6. mongodb adapter
+7. better auth

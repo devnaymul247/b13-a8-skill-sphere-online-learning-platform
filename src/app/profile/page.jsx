@@ -9,9 +9,9 @@ const ProfilePage = () => {
   const userData = authClient.useSession();
   const user = userData.data?.user;
 
-  if(!user) {
-    redirect('/signin')
-  }
+  // if(!user) {
+  //   redirect('/signin')
+  // }
 
   return (
     <div>
